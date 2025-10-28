@@ -5,6 +5,7 @@
 @import "./variables";
 @import "./header";
 @import "./responsive";
+@import "./home";
 
 /* Css reset */
 * {
@@ -23,6 +24,7 @@ body {
   color: $text-color;
 }
 
+//* container uses as a GENERAL class somewhere
 .container {
   max-width: 1070px;
   width: 100%;
