@@ -1,0 +1,108 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Cairo:wght@200..1000&family=Indie+Flower&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+CO+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Tsukimi+Rounded&family=Young+Serif&display=swap");
+header {
+  position: sticky;
+  background-color: #f2f0f1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+}
+header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0;
+}
+header .nav #menu-icon {
+  font-size: 28px;
+  color: #273ea1;
+  cursor: pointer;
+  display: none;
+}
+header .nav .logo {
+  font-size: 15px;
+  color: #273ea1;
+  font-weight: 700;
+}
+header .nav .navbar {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+header .nav .navbar .nav-link {
+  color: #273ea1;
+  font-size: 17px;
+  font-weight: 700;
+}
+header .nav #cart-icon {
+  font-size: 20px;
+  color: #273ea1;
+  cursor: pointer;
+}
+header .nav .bx-shopping-bag {
+  position: relative;
+}
+header .nav .bx-shopping-bag::after {
+  content: attr(data-quantity);
+  position: absolute;
+  top: 0;
+  right: -18px;
+  background-color: #273ea1;
+  color: #fff;
+  width: 20px;
+  height: 15px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+@media (max-width: 550px) {
+  #menu-icon {
+    display: block !important;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f0f1;
+    row-gap: 8px;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 20px 20px rgba(237, 237, 237, 0.45);
+    clip-path: circle(0% at 0% 0%);
+    transition: all 0.5s;
+  }
+  .navbar.open-menu {
+    clip-path: circle(144% at 0% 0%);
+  }
+}
+/* Css reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+}
+
+body {
+  font-family: "Big Shoulders", sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+.container {
+  max-width: 1070px;
+  width: 100%;
+  margin: auto;
+}
+
+/*# sourceMappingURL=style.css.map */
