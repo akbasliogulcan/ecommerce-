@@ -1,10 +1,20 @@
+//************************************************************* */
+//************************************************************* */
+//************************************************************* */
+
+
 const fetchProducts = async () => {
-           const res = await fetch("./db.json");
 
 
-           const data = await res.json();
-           console.log(data);
-
+           try {
+                      const res = await fetch("./db.json");
+                      const data = await res.json();
+                      return data;
+           }
+           catch (err) {
+                      alert(`Error:${err}`);
+                      return [];
+           }
 
 };
 
