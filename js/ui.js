@@ -9,21 +9,35 @@ const elements = {
 };
 
 
-const renderProducts = (products) => {
-
+const renderProducts = (products, addTocartFunction) => {
            const productsHtml = products.map((product) => `
+           
             <div class="product">
-                                            <img src="" alt="product-image" class="product-image">
+                                            <img src="${product.image}" >
                                             <div class="product-info">
-                                                       <h2 class="product-title">shoes</h2>
-                                                       <p class="product-price">23232$</p>
-                                                       <a href="#" class="add-to-cart">Add to Cart</a>
+                                                       <h2 class="product-title">${product.title}</h2>
+                                                       <p class="product-price">${product.price}</p>
+                                                       <a  class="add-to-cart" data-id='${product.id}'>Add to Cart</a>
                                             </div>
                                  </div>`)
                       .join("");
            //*htmli arayüze aktar
            elements.productList.innerHTML = productsHtml
 
+           //*add to cartı izle . Elementsin olduğu yere yazmamamızın nedeni render edildikten sonra add to cart butonun gelmesi
+           const addToCartButtons = document.querySelectorAll('.add-to-cart');
+           //*queryselectorAll metodu ile gelen addtocardlar dizi şek.old.dolayı addevenlistener eklemeyiz.Tek tek erişmek en doğru olanı
+           for (let i = 0; i < addToCartButtons.length; i++) {
+
+                      //*elemanlara eriş
+                      const addToCartButton = addToCartButtons[i];
+                      //*olay izleyicisi ekle
+                      // addToCartButton.addEventListener('click', () => { console.log("tık tık"); });
+                      addToCartButton.addEventListener('click', addTocartFunction);
+
+           }
+
+
 };
 
-export { elements, renderProducts };
+export { elements, renderProducts };        

@@ -4,13 +4,20 @@
 
 
 import fetchProducts from "./api.js";
+import { addTocart } from "./cart.js";
 import { elements, renderProducts } from "./ui.js";
 
+
+//*bu kısım sayfa küçüldüğünde menu ikonunun aktifleşmesini sağlar.
 elements.menuIcon.addEventListener("click", () => {
            elements.menu.classList.toggle('open-menu')
 });
 
+
+//*ürünleri al
 fetchProducts();
+
+
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -24,10 +31,16 @@ document.addEventListener("DOMContentLoaded", async () => {
            else {
                       //*Anasaydaysan apiden verileri al 
                       fetchProducts().then((products) => {
-                                 renderProducts(products);
+                                 renderProducts(products, (e) => {
+
+                                            addTocart(e, products);
+
+                                            // addTocart() callback fonksiyonu, ürünler ekrana geldikten sonra sepete ekleme işlevini aktif eder.
+                                            // Yani render işlemi bittiğinde butonlara “sepete ekle” fonksiyonunu bağlar.
+                                 });
                       })
                                  .catch((err) => {
-                                            console.log("Error" ` ${err}`);
+                                            // console.log("Error" ` ${err}`);
                                  })
            }
 

@@ -185,35 +185,38 @@ header .nav .bx-shopping-bag::after {
   gap: 16px;
   margin-top: 32px;
 }
-.products .product-container .product-image {
+.products .product-container .product img {
   width: 100%;
-  height: 350px;
+  height: 400px;
   object-fit: cover;
+  border-radius: 10px;
 }
-.products .product-container .product-info {
+.products .product-container .product .product-info {
   display: flex;
   flex-direction: column;
 }
-.products .product-container .product-title {
+.products .product-container .product .product-title {
   font-size: 22px;
   font-weight: 600;
   color: #000;
   margin: 12px 0 8px;
 }
-.products .product-container .product-price {
+.products .product-container .product .product-price {
   font-size: 19px;
   color: #273ea1;
   font-weight: 400;
 }
 .products .product-container .product .add-to-cart {
+  width: 100%;
   background-color: #273ea1;
-  color: #fff;
+  color: rgb(159, 223, 159);
   font-weight: 600;
   padding: 10px;
   text-align: center;
   letter-spacing: 1px;
   margin-top: 45px;
   cursor: pointer;
+  border-radius: 30%;
 }
 
 /* Css reset */
