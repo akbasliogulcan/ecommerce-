@@ -1,8 +1,9 @@
 import { saveToLocalStorage, getFromLocalStorage } from "./helper.js";
 
-const addTocart = (e, products) => {
-           // add-to-cart butonların tıklandığında butonları birbirinden ayırt etmek için bunlara data-id ile birer uniq id atadık.Bu sayede bu butonların birbirinde farklı olmasını sağladık.
-
+const addTocart = (products, e) => {
+           // add-to-cart butonların tıklandığında butonları birbirinden ayırt etmek için bunlara data-id ile birer uniq id atadık.
+           // Bu sayede bu butonların birbirinde farklı olmasını sağladık.
+           console.log(e);
 
 
            //tıklanılan elemanın id eriş
@@ -13,7 +14,7 @@ const addTocart = (e, products) => {
            const product = products.find((product) => product.id === productId);
            console.log(product);
            saveToLocalStorage(product);
-           getFromLocalStorage(product)
+
 
 };
 export { addTocart };

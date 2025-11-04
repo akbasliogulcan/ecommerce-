@@ -17,8 +17,6 @@ elements.menuIcon.addEventListener("click", () => {
 //*ürünleri al
 fetchProducts();
 
-
-
 document.addEventListener("DOMContentLoaded", async () => {
 
            //*arayüzdeysek verileri al ,sepette isek ürünleri renderla.
@@ -29,11 +27,12 @@ document.addEventListener("DOMContentLoaded", async () => {
                       (window.location.pathname.includes("../cart.html")) {
            }
            else {
-                      //*Anasaydaysan apiden verileri al 
+                      //*Anasayfaysan apiden verileri al 
                       fetchProducts().then((products) => {
                                  renderProducts(products, (e) => {
 
-                                            addTocart(e, products);
+
+                                            addTocart(products, e);
 
                                             // addTocart() callback fonksiyonu, ürünler ekrana geldikten sonra sepete ekleme işlevini aktif eder.
                                             // Yani render işlemi bittiğinde butonlara “sepete ekle” fonksiyonunu bağlar.

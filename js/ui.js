@@ -24,7 +24,7 @@ const renderProducts = (products, addTocartFunction) => {
            //*htmli arayüze aktar
            elements.productList.innerHTML = productsHtml
 
-           //*add to cartı izle . Elementsin olduğu yere yazmamamızın nedeni render edildikten sonra add to cart butonun gelmesi
+           //*add to cartı izle . Elements'in olduğu yere yazmamamızın nedeni render edildikten sonra add to cart butonun gelmesi
            const addToCartButtons = document.querySelectorAll('.add-to-cart');
            //*queryselectorAll metodu ile gelen addtocardlar dizi şek.old.dolayı addevenlistener eklemeyiz.Tek tek erişmek en doğru olanı
            for (let i = 0; i < addToCartButtons.length; i++) {
@@ -34,6 +34,9 @@ const renderProducts = (products, addTocartFunction) => {
                       //*olay izleyicisi ekle
                       // addToCartButton.addEventListener('click', () => { console.log("tık tık"); });
                       addToCartButton.addEventListener('click', addTocartFunction);
+                      //*addTocartFunction  main'deki renderProducts(products, (e)) parametrelerinin e olanına denk geliyor.
+                      //*ve sonrasında     addTocart(products, e); kısmı ile addTocart fonskiynuna gidiyor.
+
 
            }
 
