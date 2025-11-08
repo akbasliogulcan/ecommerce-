@@ -5,7 +5,10 @@
 
 import fetchProducts from "./api.js";
 import { addTocart } from "./cart.js";
-import { elements, renderProducts } from "./ui.js";
+import { getFromLocalStorage, updateCartIcon } from "./helper.js";
+import { elements, renderCartItems, renderProducts } from "./ui.js";
+
+
 
 
 //*bu kısım sayfa küçüldüğünde menu ikonunun aktifleşmesini sağlar.
@@ -22,9 +25,20 @@ document.addEventListener("DOMContentLoaded", async () => {
            //*arayüzdeysek verileri al ,sepette isek ürünleri renderla.
            //*hangi saydada old. karar ver
 
+
+           const cart = getFromLocalStorage();
+
+
+
+
            if
-                      //*cart.html deysen           
-                      (window.location.pathname.includes("../cart.html")) {
+                      (window.location.pathname.includes("/cart.html")) {
+
+                      //*Sepet Sayfa işlemleri 
+
+                      const cart = getFromLocalStorage();
+                      renderCartItems(cart);
+
            }
            else {
                       //*Anasayfaysan apiden verileri al 
@@ -42,5 +56,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                                             // console.log("Error" ` ${err}`);
                                  })
            }
+
+
+           //*sepetteki ürün miktarını sepet iconuna yansıtma*/
+           updateCartIcon(cart);
 
 });
