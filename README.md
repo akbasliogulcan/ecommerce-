@@ -1,7 +1,7 @@
 E-commerce Shop Project
 Overview
 
-This is a modern e-commerce web application built using HTML, CSS, JavaScript (with modules) and leverages browser localStorage for cart persistence. The live demo is available at: https://ecommercebutik.netlify.app/
+This is a modern e-commerce web application built using HTML, CSS, JavaScript (with modules) and leverages browser localStorage for cart persistence. The live demo is available at: clothesakbasli.netlify.app
 
 Features
 
