@@ -52,7 +52,7 @@ const renderCartItems = (cart) => {
   elements.cartContainer.innerHTML = cart.map((item) =>
 
 
-    `       <div class="cart-item">
+    `  <div class="cart-item">
               <img
                 src="${item.image}"
                 alt=""
@@ -70,7 +70,7 @@ const renderCartItems = (cart) => {
               </div>
               <h2 class="cart-item-price">$${item.price}</h2>
               <button class="remove-from-cart" data-id='${item.id}'>Remove</button>
-            </div>`
+            </div>     `
   )
 
     .join("");

@@ -42,9 +42,10 @@ const calculateCartTotal = (cart) => {
 const displayCartTotal = (cart) => {
            // Toplam ürün fiyatını hesaplayan fonksiyonu çalıştır
            const total = calculateCartTotal(cart);
-
+           console.log(total);
            // Sepetteki toplam ürün fiyatını render et (ekrana bastır)
-           elements.cartTotal.textContent = `Total: $ ${total}`;
+           elements.cartTotal.textContent = `Total:${total} $`;
+           console.log(elements.cartTotal);
 };
 
 

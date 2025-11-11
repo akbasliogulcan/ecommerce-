@@ -24,12 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
            //*arayüzdeysek verileri al ,sepette isek ürünleri renderla.
            //*hangi saydada old. karar ver
-
-
            const cart = getFromLocalStorage();
-
-
-
 
            if
                       (window.location.pathname.includes("/cart.html")) {

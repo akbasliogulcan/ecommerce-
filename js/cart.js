@@ -86,6 +86,8 @@ const removeFromCart = (e) => {
            //*toplam fiyatı söyleyen fonksiyonu çağır
            displayCartTotal(cart);
 
+
+
 }
 
 
